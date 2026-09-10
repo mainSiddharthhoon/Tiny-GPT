@@ -1,0 +1,1 @@
+"""Model configuration for Tiny-GPT."""

@@ -7,5 +7,13 @@ __pycache__/
 
 *.pt
 *.pth
-checkpoints/
-data/raw/
+checkpoints/*
+data/raw/*
+
+# Keep the project directories visible in Git while excluding their contents.
+!checkpoints/
+!checkpoints/.gitkeep
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
