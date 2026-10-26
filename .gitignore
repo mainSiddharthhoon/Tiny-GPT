@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python environments and caches
 .venv/
 venv/
@@ -44,3 +45,24 @@ Thumbs.db
 Desktop.ini
 .vscode/
 .idea/
+=======
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.env
+
+*.pt
+*.pth
+checkpoints/*
+data/raw/*
+
+# Keep the project directories visible in Git while excluding their contents.
+!checkpoints/
+!checkpoints/.gitkeep
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+>>>>>>> 9aa3f7fc3b3d75997e6029e7eb3b8e510bb24701

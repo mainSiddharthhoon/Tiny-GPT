@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TinyGPT v2
 
 TinyGPT v2 is an educational language-model project that documents a complete small-model workflow: initialize a GPT-2-style causal Transformer, pretrain it in stages, prepare supervised fine-tuning (SFT) data, train two data-mixture variants, compare their outputs, and export the resulting checkpoints to GGUF for local inference.
@@ -66,3 +67,14 @@ The repository's `LICENSE` carries an Apache-2.0 declaration. The technical repo
 ## Project status
 
 This is a notebook-based research/educational artifact set rather than an installable Python package or hosted inference service. The reports and saved notebook outputs document the completed experiments; rerunning training depends on external inputs and compute described above.
+=======
+# Tiny-GPT
+
+A small GPT-style Transformer language model trained from randomly initialized weights.
+
+Project structure and environment setup are being established first.
+
+The project is organized into data, model, training, and utility modules under
+`src/`. The tokenizer implementation lives in the top-level `tokenizer/`
+package.
+>>>>>>> 9aa3f7fc3b3d75997e6029e7eb3b8e510bb24701
