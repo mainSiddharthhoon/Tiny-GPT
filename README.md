@@ -77,4 +77,3 @@ Project structure and environment setup are being established first.
 The project is organized into data, model, training, and utility modules under
 `src/`. The tokenizer implementation lives in the top-level `tokenizer/`
 package.
->>>>>>> 9aa3f7fc3b3d75997e6029e7eb3b8e510bb24701
