@@ -1,0 +1,12 @@
+SPDX-License-Identifier: Apache-2.0
+Copyright 2026 Siddharth (FakeSiddharth)
+
+This project declares the Apache License 2.0 for its original project materials.
+The full license text is available at:
+https://www.apache.org/licenses/LICENSE-2.0
+
+Third-party datasets and externally hosted model weights are not included in
+this repository and remain subject to their providers' terms. The technical
+report states that dataset-license compatibility and model-weight redistribution
+permissions require separate review; this declaration does not grant rights to
+those third-party materials.

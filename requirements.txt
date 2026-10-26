@@ -1,0 +1,11 @@
+accelerate
+datasets
+huggingface_hub
+ipywidgets
+jupyterlab
+numpy
+requests
+torch
+tqdm
+transformers
+urllib3
