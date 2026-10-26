@@ -1,0 +1,145 @@
+{
+  "report_title": "TinyGPT v2 — Interactive SFT Playground Benchmark Summary",
+  "source_file": "tinygpt_benchmark_results (1).txt",
+  "source_type": "Generated from test transcripts",
+  "timestamps_utc": {
+    "greedy_decoding": "2026-10-24 12:26:29 UTC",
+    "sampled_decoding": "2026-10-24 12:35:07 UTC"
+  },
+  "models_evaluated": [
+    "Mix A",
+    "Mix B"
+  ],
+  "evaluation_scope": [
+    "Greedy decoding",
+    "Stochastic sampling"
+  ],
+  "configurations": {
+    "greedy": {
+      "mode": "greedy",
+      "random_seed": 42,
+      "max_tokens": 128
+    },
+    "sampled": {
+      "mode": "sampled",
+      "random_seed": 42,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "max_tokens": 128
+    }
+  },
+  "test_coverage": {
+    "greedy_test_ids": "G-01 through G-27",
+    "greedy_test_count": 27,
+    "sampled_test_ids": "S-01 through S-26",
+    "sampled_test_count_in_supplied_transcript": 26,
+    "source_note": "The source summary describes a 27-prompt benchmark, but the supplied sampled-decoding transcript contains IDs S-01 through S-26 only. No missing sampled test has been inferred or reconstructed.",
+    "categories": [
+      "Identity, greetings, and self-awareness",
+      "Conversational empathy and emotional support",
+      "Factual knowledge and science",
+      "Logic and mathematical reasoning",
+      "Programming and coding",
+      "Constraint following and hallucination resistance",
+      "Short-term context and memory"
+    ]
+  },
+  "latency_seconds_as_reported_by_source": {
+    "mix_a": {
+      "range_over_reported_tests": [
+        0.041,
+        0.753
+      ],
+      "greedy_average_approx": 0.09,
+      "sampled_average_approx": 0.09
+    },
+    "mix_b": {
+      "range_over_reported_tests": [
+        0.037,
+        0.236
+      ],
+      "greedy_average_approx": 0.08,
+      "sampled_average_approx": 0.15
+    },
+    "note": "Latency ranges and averages are copied from the source report and were not independently recalculated."
+  },
+  "key_findings": {
+    "overall": [
+      "Both variants showed substantial generation-quality failures across the tested prompts.",
+      "The source report does not provide a formally scored accuracy percentage; this summary does not invent one.",
+      "Greedy decoding was fast in the recorded runs but showed repetitive attractor failures.",
+      "Sampled decoding did not resolve the failures and showed severe repeated-answer or catchphrase loops."
+    ],
+    "greedy_mix_a": [
+      "Frequently hedged or gave generic non-answers such as 'I'm not sure' or 'I'm sure you'll find a solution'.",
+      "Failed the arithmetic and coding tasks in the supplied examples.",
+      "Frequently failed to answer factual, logic, and constraint-following prompts directly."
+    ],
+    "greedy_mix_b": [
+      "Repeated 'The answer is 12' or related incorrect numeric answers across unrelated math and coding prompts.",
+      "Repeated an invented room-temperature claim of -4.5 degrees Fahrenheit across seven consecutive unrelated prompts, according to the source report.",
+      "Answered the capital-of-France question correctly and gave a broadly correct basic photosynthesis explanation.",
+      "Answered the one-turn context recall question with Python, according to the source report."
+    ],
+    "sampled_mix_a": [
+      "Echoed 'What is the capital of France?' across many unrelated prompts (reported as S-07 to S-17).",
+      "Later repeated variants of 'What is the value of the Sun's energy...' across unrelated prompts (reported as S-20 to S-26).",
+      "Responses were generally off-topic and did not reliably follow requested formats."
+    ],
+    "sampled_mix_b": [
+      "Frequently began responses with catchphrases such as 'This is not true!' or 'It's really hard to come up with a good answer.'",
+      "Mixed concepts from unrelated prompts, including notebooks, room temperatures, CPUs, and computer operation.",
+      "Did not reliably answer arithmetic, coding, factual, or strict-format prompts."
+    ]
+  },
+  "representative_examples": [
+    {
+      "mode": "greedy",
+      "model": "Mix B",
+      "prompt_type": "Arithmetic",
+      "observed_response": "The answer is 12.",
+      "interpretation": "Incorrect for 12 + 8 - 5, whose result is 15."
+    },
+    {
+      "mode": "greedy",
+      "model": "Mix B",
+      "prompt_type": "Factual knowledge",
+      "observed_response": "The capital of France is Paris.",
+      "interpretation": "Correct response to this specific prompt; it does not establish general factual reliability."
+    },
+    {
+      "mode": "greedy",
+      "model": "Mix B",
+      "prompt_type": "Hallucination resistance",
+      "observed_response": "The temperature inside my room is -4.5 degrees Fahrenheit",
+      "interpretation": "Unsupported invented measurement, repeated across unrelated prompts according to the source report."
+    },
+    {
+      "mode": "sampled",
+      "model": "Mix A",
+      "prompt_type": "Cross-prompt repetition",
+      "observed_response_pattern": "What is the capital of France?",
+      "interpretation": "Repeated answer was unrelated to many subsequent prompts."
+    },
+    {
+      "mode": "sampled",
+      "model": "Mix B",
+      "prompt_type": "Catchphrase fixation",
+      "observed_response_pattern": "This is not true!",
+      "interpretation": "Repeated prefix appeared across unrelated prompts."
+    }
+  ],
+  "limitations_and_caveats": [
+    "This is a small, project-specific qualitative benchmark, not a standardized evaluation suite.",
+    "The source does not provide an answer key, per-test correctness labels, confidence intervals, or a formal accuracy calculation.",
+    "The sampled transcript has 26 visible test IDs (S-01 to S-26), while greedy has 27 (G-01 to G-27).",
+    "Latency averages and ranges are source-reported approximations.",
+    "A few correct responses do not offset the broad repetition, relevance, reasoning, coding, and hallucination failures observed."
+  ],
+  "conclusion": "In the supplied interactive tests, neither Mix A nor Mix B demonstrated reliable general-purpose assistant behavior. Greedy decoding exhibited high-hedging or attractor-collapse patterns; sampled decoding exhibited prompt echoing, catchphrase fixation, and semantic bleed. Mix B showed a few isolated successes, including the France-capital and one-turn Python recall prompts, but these do not establish overall reliability.",
+  "scoring_status": {
+    "formal_accuracy_score": null,
+    "reason": "No formally scored correctness labels or aggregate accuracy metric were provided in the source transcript."
+  }
+}

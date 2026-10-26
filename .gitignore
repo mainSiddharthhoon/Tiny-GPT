@@ -1,3 +1,51 @@
+<<<<<<< HEAD
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter's transient files (keep the notebooks and their saved results)
+.ipynb_checkpoints/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+kaggle.json
+.kaggle/
+
+# Datasets, checkpoints, and model exports generated or downloaded by notebooks
+data/
+datasets/
+checkpoints/
+outputs/
+artifacts/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.parquet
+*.jsonl
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Operating-system/editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+=======
 .venv/
 __pycache__/
 *.pyc
@@ -17,3 +65,4 @@ data/raw/*
 !data/raw/.gitkeep
 !data/processed/
 !data/processed/.gitkeep
+>>>>>>> 9aa3f7fc3b3d75997e6029e7eb3b8e510bb24701

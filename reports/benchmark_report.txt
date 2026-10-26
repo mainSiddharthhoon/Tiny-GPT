@@ -1,0 +1,76 @@
+TINYGPT v2 — INTERACTIVE SFT PLAYGROUND BENCHMARK SUMMARY
+=================================================================
+
+Source: tinygpt_benchmark_results (1).txt
+Source type: Generated from test transcripts
+Models: Mix A and Mix B
+Evaluation: Greedy decoding vs. stochastic sampling
+Greedy timestamp (UTC): 2026-10-24 12:26:29
+Sampled timestamp (UTC): 2026-10-24 12:35:07
+
+1. CONFIGURATIONS
+-----------------------------------------------------------------
+Greedy: mode=greedy; seed=42; max_tokens=128
+Sampled: mode=sampled; seed=42; temperature=0.7; top_p=0.9; repeat_penalty=1.1; max_tokens=128
+
+2. TEST COVERAGE
+-----------------------------------------------------------------
+Greedy IDs: G-01 through G-27 (27 tests).
+Sampled IDs visible in source: S-01 through S-26 (26 tests).
+Note: the source refers to a 27-prompt benchmark, but only 26 sampled IDs are present in the supplied transcript. No missing test was inferred.
+Categories: identity/greetings; empathy; factual knowledge/science; logic/math; coding; constraint following/hallucination resistance; short-term context/memory.
+
+3. LATENCY (AS REPORTED BY SOURCE)
+-----------------------------------------------------------------
+Mix A: 0.041–0.753 s; greedy average approximately 0.09 s; sampled average approximately 0.09 s.
+Mix B: 0.037–0.236 s; greedy average approximately 0.08 s; sampled average approximately 0.15 s.
+These values were copied from the source report and not independently recalculated.
+
+4. MAIN FINDINGS
+-----------------------------------------------------------------
+Overall:
+- Both variants showed substantial generation-quality failures across the tested prompts.
+- The report contains no formally scored accuracy percentage; none is invented here.
+- Greedy decoding was fast in these runs but showed repetitive attractor failures.
+- Sampling did not resolve the failures and showed severe repeated-answer/catchphrase loops.
+
+Greedy — Mix A:
+- Frequent hedging and generic non-answers, such as “I’m not sure” and “I’m sure you’ll find a solution”.
+- Failed the arithmetic and coding tasks in the supplied examples; frequently missed factual, logic, and format constraints.
+
+Greedy — Mix B:
+- Repeated “The answer is 12” or similar incorrect numeric responses to unrelated math and coding questions.
+- Repeated an invented room-temperature claim of -4.5 degrees Fahrenheit across seven consecutive unrelated prompts, per the source report.
+- Correctly answered the France-capital question and gave a broadly correct basic photosynthesis explanation.
+- The source report notes one successful one-turn recall response for Python.
+
+Sampled — Mix A:
+- Echoed “What is the capital of France?” across many unrelated prompts (reported as S-07 to S-17).
+- Later repeated versions of “What is the value of the Sun’s energy...” across unrelated prompts (reported as S-20 to S-26).
+- Responses were generally off-topic and did not reliably follow requested formats.
+
+Sampled — Mix B:
+- Frequently began with “This is not true!” or “It’s really hard to come up with a good answer.”
+- Mixed topics from unrelated prompts, including notebooks, temperatures, CPUs, and computer operation.
+- Did not reliably answer arithmetic, coding, factual, or strict-format prompts.
+
+5. REPRESENTATIVE EXAMPLES
+-----------------------------------------------------------------
+- Greedy / Mix B / arithmetic: “The answer is 12.” Incorrect for 12 + 8 - 5 = 15.
+- Greedy / Mix B / factual: “The capital of France is Paris.” Correct for this prompt only.
+- Greedy / Mix B / room temperature: claimed “-4.5 degrees Fahrenheit” without access to the room’s actual temperature.
+- Sampled / Mix A: repeated “What is the capital of France?” in response to unrelated questions.
+- Sampled / Mix B: repeatedly prefixed unrelated answers with “This is not true!”.
+
+6. LIMITATIONS / CAVEATS
+-----------------------------------------------------------------
+- Small project-specific qualitative benchmark, not a standardized evaluation suite.
+- No answer-key scoring, per-test correctness labels, confidence intervals, or formal accuracy calculation were provided.
+- Sampled transcript includes 26 visible test IDs, while greedy includes 27.
+- Latency metrics are source-reported approximations.
+
+7. CONCLUSION
+-----------------------------------------------------------------
+In the supplied tests, neither Mix A nor Mix B demonstrated reliable general-purpose assistant behavior. Greedy decoding showed high-hedging or attractor-collapse patterns; sampled decoding showed prompt echoing, catchphrase fixation, and semantic bleed. Mix B had a few isolated successes, but these do not establish overall reliability.
+
+Formal accuracy score: Not provided. The source transcript does not contain formal correctness labels or an aggregate accuracy metric.
