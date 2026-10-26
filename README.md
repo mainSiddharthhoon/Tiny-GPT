@@ -1,7 +1,7 @@
 
-# TinyGPT v2
+# TinyGPT
 
-TinyGPT v2 is an educational language-model project that documents a complete small-model workflow: initialize a GPT-2-style causal Transformer, pretrain it in stages, prepare supervised fine-tuning (SFT) data, train two data-mixture variants, compare their outputs, and export the resulting checkpoints to GGUF for local inference.
+TinyGPT is an educational language-model project that documents a complete small-model workflow: initialize a GPT-2-style causal Transformer, pretrain it in stages, prepare supervised fine-tuning (SFT) data, train two data-mixture variants, compare their outputs, and export the resulting checkpoints to GGUF for local inference.
 
 The project demonstrates how the pipeline works; it did **not** produce a dependable general-purpose assistant. The recorded 51,082,752-parameter models showed weaknesses in arithmetic, coding, factual grounding, instruction following, and hallucination resistance. Treat them as research and learning artifacts, not as systems for consequential decisions.
 
