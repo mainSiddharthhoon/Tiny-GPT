@@ -1,1 +1,0 @@
-"""Evaluation entry point for Tiny-GPT."""
